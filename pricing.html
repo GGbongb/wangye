@@ -57,9 +57,10 @@
                             不限次数使用
                         </li>
                     </ul>
-                    <button class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300">
+                    <a href="#purchase" 
+                       class="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300 text-center">
                         立即体验
-                    </button>
+                    </a>
                 </div>
 
                 <!-- 永久版 -->
@@ -89,16 +90,17 @@
                             优先技术支持
                         </li>
                     </ul>
-                    <button class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300">
+                    <a href="#purchase" 
+                       class="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300 text-center">
                         立即购买
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- 购买方式 - 第二页 -->
-    <div class="min-h-screen bg-gray-50">
+    <div id="purchase" class="min-h-screen bg-gray-50">
         <div class="container mx-auto px-4 h-full flex flex-col justify-center">
             <div class="text-center">
                 <h2 class="text-3xl font-bold text-gray-900 mb-12">购买方式</h2>
@@ -124,5 +126,11 @@
             <p>© 2024 聊天记录提取工具. 保留所有权利.</p>
         </div>
     </footer>
+
+    <style>
+        html {
+            scroll-behavior: smooth; /* 添加平滑滚动效果 */
+        }
+    </style>
 </body>
 </html>
