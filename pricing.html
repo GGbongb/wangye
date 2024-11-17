@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>价格方案 - 聊天记录提取工具</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 right-0 bg-white py-4 shadow-md z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+                <span class="font-bold text-xl">聊天录屏提取工具</span>
+            </div>
+            <nav class="flex space-x-8">
+                <a href="#" class="hover:underline">首页</a>
+                <a href="pricing.html" class="text-gray-600 hover:text-blue-600">价格</a>
+                <a href="#" class="hover:underline">下载</a>
+                <a href="#" class="hover:underline">联系我们</a>
+            </nav>
+            <button class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Get started</button>
+        </div>
+    </header>
+
+    <!-- 价格方案区域 -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">简单透明的价格方案</h1>
+            <p class="text-xl text-gray-600">选择最适合您的方案，开始提升工作效率</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- 体验版 -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-transparent hover:border-blue-500 transition-all duration-300">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">7天体验版</h3>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">
+                        ¥7
+                        <span class="text-base font-normal text-gray-600">/7天</span>
+                    </div>
+                    <p class="text-gray-600">7日内不限次数自由使用</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        完整功能体验
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        不限次数使用
+                    </li>
+                </ul>
+                <button class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300">
+                    立即体验
+                </button>
+            </div>
+
+            <!-- 永久版 -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-blue-500 transform scale-105">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm">最受欢迎</span>
+                </div>
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">永久版</h3>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">
+                        ¥50
+                        <span class="text-base font-normal text-gray-600">/永久</span>
+                    </div>
+                    <p class="text-gray-600">一次付费，永久拥有</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        永久免费更新
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        不限设备使用
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        优先技术支持
+                    </li>
+                </ul>
+                <button class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300">
+                    立即购买
+                </button>
+            </div>
+
+            <!-- 限时优惠 -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-transparent hover:border-blue-500 transition-all duration-300">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">体验期优惠</h3>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">
+                        ¥40
+                        <span class="text-base font-normal text-gray-600">/永久</span>
+                    </div>
+                    <p class="text-gray-600">7天内体验期购买专享</p>
+                </div>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        限时优惠
+                    </li>
+                    <li class="flex items-center text-gray-600">
+                        <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        永久版全部功能
+                    </li>
+                </ul>
+                <button class="w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300">
+                    立即优惠
+                </button>
+            </div>
+        </div>
+
+        <!-- 购买方式 -->
+        <div class="mt-16 text-center">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">购买方式</h2>
+            <div class="bg-white rounded-2xl shadow-lg p-8 max-w-md mx-auto">
+                <div class="mb-6">
+                    <img src="./assets/images/pricing/qrcode.png" 
+                         alt="客服二维码" 
+                         class="w-48 h-48 mx-auto mb-4">
+                    <p class="text-gray-600">扫描二维码联系客服</p>
+                </div>
+                <div class="text-gray-600">
+                    <p>工作时间：9:00 - 21:00</p>
+                    <p>节假日正常工作</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 text-gray-600 py-12 border-t mt-20">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 聊天记录提取工具. 保留所有权利.</p>
+        </div>
+    </footer>
+</body>
+</html>
