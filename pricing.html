@@ -25,73 +25,81 @@
     </header>
 
     <!-- 价格方案区域 - 第一页 -->
-    <div class="min-h-screen pt-20">  <!-- 改为 min-h-screen 确保全屏 -->
-        <div class="container mx-auto px-4 h-full flex flex-col justify-center">
+    <div class="min-h-screen pt-20 bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
+        <!-- 背景装饰 -->
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-40 left-20 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+            <div class="absolute top-40 right-20 w-72 h-72 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div class="absolute -bottom-8 left-40 w-72 h-72 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+        </div>
+
+        <div class="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
             <div class="text-center mb-16">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">简单透明的价格方案</h1>
                 <p class="text-xl text-gray-600">选择最适合您的方案，开始提升工作效率</p>
             </div>
 
-            <!-- 两个卡片的容器 - 使用 flex 居中 -->
-            <div class="flex justify-center gap-8 max-w-4xl mx-auto">
+            <!-- 两个卡片的容器 - 调整宽度和间距 -->
+            <div class="flex justify-center gap-12 max-w-5xl mx-auto">
                 <!-- 体验版 -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-transparent hover:border-blue-500 transition-all duration-300 w-[400px]">
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-10 border-2 border-transparent hover:border-blue-500 transition-all duration-300 w-[360px] hover:transform hover:scale-105">
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">7天体验版</h3>
-                        <div class="text-4xl font-bold text-blue-600 mb-2">
+                        <div class="text-5xl font-bold text-blue-600 mb-2">
                             ¥7
                             <span class="text-base font-normal text-gray-600">/7天</span>
                         </div>
-                        <p class="text-gray-600">7日内不限次数自由使用</p>
+                        <p class="text-gray-600 mt-4">7日内不限次数自由使用</p>
                     </div>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center text-gray-600">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
                             完整功能体验
                         </li>
                         <li class="flex items-center text-gray-600">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
                             不限次数使用
                         </li>
                     </ul>
                     <a href="#purchase" 
-                       class="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300 text-center">
+                       class="block w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300 text-center hover:shadow-lg">
                         立即体验
                     </a>
                 </div>
 
                 <!-- 永久版 -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-blue-500 transform scale-105 w-[400px]">
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-10 border-2 border-blue-500 transform scale-105 w-[360px] relative">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm">最受欢迎</span>
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-1.5 rounded-full text-sm font-medium shadow-lg">最受欢迎</span>
                     </div>
                     <div class="text-center mb-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">永久版</h3>
-                        <div class="text-4xl font-bold text-blue-600 mb-2">
+                        <div class="text-5xl font-bold text-blue-600 mb-2">
                             ¥50
                             <span class="text-base font-normal text-gray-600">/永久</span>
                         </div>
-                        <p class="text-gray-600">一次付费，永久拥有</p>
+                        <p class="text-gray-600 mt-4">一次付费，永久拥有</p>
                     </div>
                     <ul class="space-y-4 mb-8">
                         <li class="flex items-center text-gray-600">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
                             永久免费更新
                         </li>
                         <li class="flex items-center text-gray-600">
-                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
                             优先技术支持
                         </li>
                     </ul>
                     <a href="#purchase" 
-                       class="block w-full py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-300 text-center">
+                       class="block w-full py-4 px-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white rounded-xl font-medium transition-all duration-300 text-center hover:shadow-lg">
                         立即购买
                     </a>
                 </div>
@@ -187,6 +195,25 @@
     <style>
         html {
             scroll-behavior: smooth; /* 添加平滑滚动效果 */
+        }
+
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        
+        .animation-delay-4000 {
+            animation-delay: 4s;
         }
     </style>
 </body>
