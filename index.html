@@ -178,20 +178,17 @@
         /* 修改滚动捕捉效果 */
         html {
             scroll-behavior: smooth;  /* 保持平滑滚动 */
-            height: 100%;
-            overflow-y: auto;
         }
 
-        /* 创建一个包装容器来控制滚动捕捉区域 */
+        /* 移除固定高度和独立滚动 */
         .snap-container {
             scroll-snap-type: y mandatory;
-            height: 100vh;
-            overflow-y: auto;
         }
 
         .snap-section {
             scroll-snap-align: start;
             scroll-snap-stop: always;
+            min-height: 100vh;  /* 使用最小高度而不是固定高度 */
         }
     </style>
 </head>
@@ -336,7 +333,7 @@
 
             <!-- 版权信息 -->
             <div class="border-t mt-12 pt-8 text-center text-sm">
-                <p>© 2024 聊天记录提取工具. 保留所有权利.</p>
+                <p>© 2024 聊天记���提取工具. 保留所有权利.</p>
             </div>
         </div>
     </footer>
