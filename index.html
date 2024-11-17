@@ -12,16 +12,30 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-fadeIn');
+                        // 为不同类型的动画添加对应的类
+                        if (entry.target.classList.contains('slide-in-left')) {
+                            entry.target.classList.add('active');
+                        }
+                        if (entry.target.classList.contains('slide-in-right')) {
+                            entry.target.classList.add('active');
+                        }
+                        if (entry.target.classList.contains('scale-in')) {
+                            entry.target.classList.add('active');
+                        }
                     }
                 });
+            }, {
+                threshold: 0.1 // 当元素出现10%时触发动画
             });
 
-            const fadeElements = document.querySelectorAll('.fade');
-            fadeElements.forEach(el => observer.observe(el));
+            // 观察所有需要动画的元素
+            document.querySelectorAll('.slide-in-left, .slide-in-right, .scale-in').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
     <style>
+        /* 基础淡入动画 */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -33,8 +47,68 @@
             }
         }
 
+        /* 从左侧滑入 */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 从右侧滑入 */
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 从中间展开 */
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
         .animate-fadeIn {
             animation: fadeIn 1s ease-out forwards;
+        }
+
+        .slide-in-left {
+            opacity: 0;
+        }
+
+        .slide-in-right {
+            opacity: 0;
+        }
+
+        .scale-in {
+            opacity: 0;
+        }
+
+        .slide-in-left.active {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .slide-in-right.active {
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        .scale-in.active {
+            animation: scaleIn 1s ease-out forwards;
         }
     </style>
 </head>
@@ -59,8 +133,8 @@
     </header>
 
     <!-- Section 1: 智能算法提取 -->
-    <section class="min-h-screen container mx-auto px-4 py-16 text-center lg:flex lg:items-center lg:justify-between fade">
-        <div class="text-left max-w-xl">
+    <section class="min-h-screen container mx-auto px-4 py-16 text-center lg:flex lg:items-center lg:justify-between">
+        <div class="text-left max-w-xl slide-in-left">
             <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
                 智能算法<br />
                 自动提取<br />
@@ -73,14 +147,14 @@
                 立即体验
             </button>
         </div>
-        <div class="mt-12 lg:mt-0">
+        <div class="mt-12 lg:mt-0 slide-in-right">
             <img src="https://placehold.co/500x350" alt="智能算法演示" class="rounded-lg shadow-lg">
         </div>
     </section>
 
     <!-- Section 2: 效率提升 -->
-    <section class="min-h-screen container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between bg-gray-50 fade">
-        <div class="max-w-xl text-left">
+    <section class="min-h-screen container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between bg-gray-50">
+        <div class="max-w-xl text-left slide-in-left">
             <div class="flex items-center space-x-2 mb-4">
                 <span class="text-2xl">⚡️</span>
                 <h2 class="text-3xl font-bold">30分钟工作量，1分钟搞定</h2>
@@ -89,14 +163,14 @@
                 革命性的效率提升：传统人工处理需要30分钟的录屏文件，现在只需1分钟即可完成。自动化处理流程，让您的工作事半功倍。
             </p>
         </div>
-        <div class="mt-8 lg:mt-0">
+        <div class="mt-8 lg:mt-0 slide-in-right">
             <img src="https://placehold.co/600x400" alt="效率对比展示" class="rounded-lg shadow-lg">
         </div>
     </section>
 
     <!-- Section 3: 专业输出 -->
-    <section class="min-h-screen container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between fade">
-        <div class="max-w-xl text-left">
+    <section class="min-h-screen container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
+        <div class="max-w-xl text-left scale-in">
             <div class="flex items-center space-x-2 mb-4">
                 <span class="text-2xl">📑</span>
                 <h2 class="text-3xl font-bold">专业证据处理工具</h2>
@@ -105,7 +179,7 @@
                 支持导出为PDF或图片格式，完美适配律师办案需求。提供清晰、连续、完整的聊天记录文档，让证据提取工作更加专业可靠。
             </p>
         </div>
-        <div class="mt-8 lg:mt-0">
+        <div class="mt-8 lg:mt-0 scale-in">
             <img src="https://placehold.co/600x400" alt="专业导出效果展示" class="rounded-lg shadow-lg">
         </div>
     </section>
