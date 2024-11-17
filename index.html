@@ -208,6 +208,25 @@
         .animate-height-fast {
             animation: heightFast 0.5s ease-out forwards;
         }
+
+        @keyframes heightDecrease {
+            0% { 
+                height: 100%; 
+                background-color: #9CA3AF;  /* 开始时使用灰色 */
+            }
+            30% { 
+                height: 100%; 
+                background-color: #9CA3AF;
+            }
+            100% { 
+                height: 3.33%; 
+                background-color: #3B82F6;  /* 结束时变成蓝色 */
+            }
+        }
+
+        .animate-height-decrease {
+            animation: heightDecrease 2s ease-in-out forwards;
+        }
     </style>
 </head>
 
@@ -273,7 +292,7 @@
                         <!-- 传统方式 -->
                         <div class="text-center w-32">
                             <div class="h-60 bg-gray-200 rounded-t-lg relative overflow-hidden">
-                                <div class="absolute bottom-0 w-full bg-gray-400 rounded-t-lg animate-height-slow"
+                                <div class="absolute bottom-0 w-full bg-gray-400 rounded-t-lg"
                                      style="height: 100%">
                                 </div>
                             </div>
@@ -284,8 +303,8 @@
                         <!-- 智能处理 -->
                         <div class="text-center w-32">
                             <div class="h-60 bg-gray-200 rounded-t-lg relative overflow-hidden">
-                                <div class="absolute bottom-0 w-full bg-blue-500 rounded-t-lg animate-height-fast"
-                                     style="height: 3.33%">
+                                <div class="absolute bottom-0 w-full bg-blue-500 rounded-t-lg animate-height-decrease"
+                                     style="height: 100%">
                                 </div>
                             </div>
                             <p class="mt-2 font-medium">智能自动处理</p>
