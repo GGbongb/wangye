@@ -175,12 +175,21 @@
             100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
         }
 
-        /* 添加滚动捕捉效果 */
+        /* 修改滚动捕捉效果 */
         html {
-            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;  /* 保持平滑滚动 */
+            height: 100%;
+            overflow-y: auto;
         }
 
-        section {
+        /* 创建一个包装容器来控制滚动捕捉区域 */
+        .snap-container {
+            scroll-snap-type: y mandatory;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .snap-section {
             scroll-snap-align: start;
             scroll-snap-stop: always;
         }
@@ -206,65 +215,68 @@
         </div>
     </header>
 
-    <!-- Section 1: 智能算法提取 -->
-    <section class="min-h-screen relative bg-gradient pt-20">
-        <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
-            <div class="max-w-xl text-left slide-in-left">
-                <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
-                    智能算法<br />
-                    自动提取<br />
-                    <span class="text-blue-500">微信聊天记录</span>
-                </h1>
-                <p class="mt-6 text-lg text-gray-600">
-                    采用先进的智能识别算法，自动从录屏文件中提取完整的聊天记录截图，无需手动操作，告别繁琐的截图工作。
-                </p>
-                <button class="bg-blue-600 text-white py-3 px-6 mt-8 text-lg rounded-lg hover:bg-blue-700">
-                    立即体验
-                </button>
-            </div>
-            <div class="mt-12 lg:mt-0 slide-in-right">
-                <img src="https://placehold.co/500x350" alt="智能算法演示" class="rounded-lg shadow-lg">
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 2: 效率提升 -->
-    <section class="min-h-screen relative floating-shapes-alt pt-20">
-        <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
+    <!-- 滚动捕捉容器 -->
+    <div class="snap-container">
+        <!-- Section 1: 智能算法提取 -->
+        <section class="min-h-screen relative bg-gradient pt-20 snap-section">
+            <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
                 <div class="max-w-xl text-left slide-in-left">
-                <div class="flex items-center space-x-2 mb-4">
-                    <span class="text-2xl">⚡️</span>
-                    <h2 class="text-3xl font-bold">30分钟工作量，1分钟搞定</h2>
+                    <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                        智能算法<br />
+                        自动提取<br />
+                        <span class="text-blue-500">微信聊天记录</span>
+                    </h1>
+                    <p class="mt-6 text-lg text-gray-600">
+                        采用先进的智能识别算法，自动从录屏文件中提取完整的聊天记录截图，无需手动操作，告别繁琐的截图工作。
+                    </p>
+                    <button class="bg-blue-600 text-white py-3 px-6 mt-8 text-lg rounded-lg hover:bg-blue-700">
+                        立即体验
+                    </button>
                 </div>
-                <p class="text-gray-600 text-lg">
-                    革命性的效率提升：传统人工处理需要30分钟的录屏文件，现在只需1分钟即可完成。自动化处理流程，让您的工作事半功倍。
-                </p>
-            </div>
-            <div class="mt-8 lg:mt-0 slide-in-right">
-                <img src="https://placehold.co/600x400" alt="效率对比展示" class="rounded-lg shadow-lg">
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: 专业输出 -->
-    <section class="min-h-screen relative floating-shapes pt-20">
-        <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
-            <div class="max-w-xl text-left scale-in">
-                <div class="flex items-center space-x-2 mb-4">
-                    <span class="text-2xl">📑</span>
-                    <h2 class="text-3xl font-bold">专业证据处理工具</h2>
+                <div class="mt-12 lg:mt-0 slide-in-right">
+                    <img src="https://placehold.co/500x350" alt="智能算法演示" class="rounded-lg shadow-lg">
                 </div>
-                <p class="text-gray-600 text-lg">
-                    支持导出为PDF或图片格式，完美适配律师办案需求。提供清晰、连续、完整的聊天记录文档，让证据提取工作更加专业可靠。
-                </p>
             </div>
-            <div class="mt-8 lg:mt-0 scale-in">
-                <img src="https://placehold.co/600x400" alt="专业导出效果展示" class="rounded-lg shadow-lg">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- Section 2: 效率提升 -->
+        <section class="min-h-screen relative floating-shapes-alt pt-20 snap-section">
+            <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
+                    <div class="max-w-xl text-left slide-in-left">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl">⚡️</span>
+                        <h2 class="text-3xl font-bold">30分钟工作量，1分钟搞定</h2>
+                    </div>
+                    <p class="text-gray-600 text-lg">
+                        革命性的效率提升：传统人工处理需要30分钟的录屏文件，现在只需1分钟即可完成。自动化处理流程，让您的工作事半功倍。
+                    </p>
+                </div>
+                <div class="mt-8 lg:mt-0 slide-in-right">
+                    <img src="https://placehold.co/600x400" alt="效率对比展示" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 专业输出 -->
+        <section class="min-h-screen relative floating-shapes pt-20 snap-section">
+            <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
+                <div class="max-w-xl text-left scale-in">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-2xl">📑</span>
+                        <h2 class="text-3xl font-bold">专业证据处理工具</h2>
+                    </div>
+                    <p class="text-gray-600 text-lg">
+                        支持导出为PDF或图片格式，完美适配律师办案需求。提供清晰、连续、完整的聊天记录文档，让证据提取工作更加专业可靠。
+                    </p>
+                </div>
+                <div class="mt-8 lg:mt-0 scale-in">
+                    <img src="https://placehold.co/600x400" alt="专业导出效果展示" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer 在滚动捕捉容器外 -->
     <footer class="bg-gray-50 text-gray-600 py-12 border-t">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
