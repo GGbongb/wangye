@@ -190,6 +190,24 @@
             scroll-snap-stop: always;
             min-height: 100vh;  /* 使用最小高度而不是固定高度 */
         }
+
+        @keyframes heightSlow {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+
+        @keyframes heightFast {
+            from { height: 0; }
+            to { height: 3.33%; }
+        }
+
+        .animate-height-slow {
+            animation: heightSlow 2s ease-out forwards;
+        }
+
+        .animate-height-fast {
+            animation: heightFast 0.5s ease-out forwards;
+        }
     </style>
 </head>
 
@@ -250,10 +268,30 @@
                         革命性的效率提升：传统人工处理需要30分钟的录屏文件，现在只需1分钟即可完成。自动化处理流程，让您的工作事半功倍。
                     </p>
                 </div>
-                <div class="mt-8 lg:mt-0 slide-in-right">
-                    <img src="./assets/images/features/efficiency.png" 
-                         alt="效率对比展示" 
-                         class="rounded-lg shadow-lg">
+                <div class="mt-8 lg:mt-0 slide-in-right w-[400px]">
+                    <div class="flex justify-around items-end h-64">
+                        <!-- 传统方式 -->
+                        <div class="text-center w-32">
+                            <div class="h-60 bg-gray-200 rounded-t-lg relative overflow-hidden">
+                                <div class="absolute bottom-0 w-full bg-gray-400 rounded-t-lg animate-height-slow"
+                                     style="height: 100%">
+                                </div>
+                            </div>
+                            <p class="mt-2 font-medium">传统人工处理</p>
+                            <p class="text-sm text-gray-500">30分钟</p>
+                        </div>
+
+                        <!-- 智能处理 -->
+                        <div class="text-center w-32">
+                            <div class="h-60 bg-gray-200 rounded-t-lg relative overflow-hidden">
+                                <div class="absolute bottom-0 w-full bg-blue-500 rounded-t-lg animate-height-fast"
+                                     style="height: 3.33%">
+                                </div>
+                            </div>
+                            <p class="mt-2 font-medium">智能自动处理</p>
+                            <p class="text-sm text-gray-500">1分钟</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
