@@ -156,6 +156,19 @@
             z-index: -1;
         }
 
+        /* 在 style 标签中添加新的背景变体 */
+        .floating-shapes-alt::before {
+            content: '';
+            position: absolute;
+            width: 400px;  /* 调整大小 */
+            height: 400px;
+            background: linear-gradient(45deg, rgba(59,130,246,0.05) 0%, rgba(147,197,253,0.05) 100%);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;  /* 不同的形状 */
+            animation: morphing 15s ease-in-out infinite;
+            z-index: -1;
+            right: 0;  /* 位置改到右边 */
+        }
+
         @keyframes morphing {
             0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
             50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
@@ -216,9 +229,9 @@
     </section>
 
     <!-- Section 2: 效率提升 -->
-    <section class="min-h-screen relative bg-pattern-1 pt-20">
+    <section class="min-h-screen relative floating-shapes-alt pt-20">
         <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
-            <div class="max-w-xl text-left slide-in-left">
+                <div class="max-w-xl text-left slide-in-left">
                 <div class="flex items-center space-x-2 mb-4">
                     <span class="text-2xl">⚡️</span>
                     <h2 class="text-3xl font-bold">30分钟工作量，1分钟搞定</h2>
