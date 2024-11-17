@@ -110,6 +110,57 @@
         .scale-in.active {
             animation: scaleIn 1s ease-out forwards;
         }
+
+        /* 背景样式 */
+        .bg-pattern-1 {
+            background-image: radial-gradient(#e0e7ff 1px, transparent 1px),
+                radial-gradient(#e0e7ff 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-color: white;
+        }
+
+        .bg-pattern-2 {
+            background: linear-gradient(135deg, #f8fafc 25%, transparent 25%) -50px 0,
+                linear-gradient(225deg, #f8fafc 25%, transparent 25%) -50px 0,
+                linear-gradient(315deg, #f8fafc 25%, transparent 25%),
+                linear-gradient(45deg, #f8fafc 25%, transparent 25%);
+            background-size: 100px 100px;
+            background-color: white;
+        }
+
+        .bg-gradient {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bg-gradient::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(147,197,253,0.1) 0%, rgba(255,255,255,0) 50%);
+            z-index: -1;
+        }
+
+        .floating-shapes::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(45deg, rgba(59,130,246,0.05) 0%, rgba(147,197,253,0.05) 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morphing 15s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes morphing {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+            100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+        }
     </style>
 </head>
 
@@ -133,54 +184,60 @@
     </header>
 
     <!-- Section 1: 智能算法提取 -->
-    <section class="min-h-screen container mx-auto px-4 py-16 text-center lg:flex lg:items-center lg:justify-between">
-        <div class="text-left max-w-xl slide-in-left">
-            <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
-                智能算法<br />
-                自动提取<br />
-                <span class="text-blue-500">微信聊天记录</span>
-            </h1>
-            <p class="mt-6 text-lg text-gray-600">
-                采用先进的智能识别算法，自动从录屏文件中提取完整的聊天记录截图，无需手动操作，告别繁琐的截图工作。
-            </p>
-            <button class="bg-blue-600 text-white py-3 px-6 mt-8 text-lg rounded-lg hover:bg-blue-700">
-                立即体验
-            </button>
-        </div>
-        <div class="mt-12 lg:mt-0 slide-in-right">
-            <img src="https://placehold.co/500x350" alt="智能算法演示" class="rounded-lg shadow-lg">
+    <section class="min-h-screen relative bg-gradient">
+        <div class="container mx-auto px-4 py-16 text-center lg:flex lg:items-center lg:justify-between">
+            <div class="text-left max-w-xl slide-in-left">
+                <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                    智能算法<br />
+                    自动提取<br />
+                    <span class="text-blue-500">微信聊天记录</span>
+                </h1>
+                <p class="mt-6 text-lg text-gray-600">
+                    采用先进的智能识别算法，自动从录屏文件中提取完整的聊天记录截图，无需手动操作，告别繁琐的截图工作。
+                </p>
+                <button class="bg-blue-600 text-white py-3 px-6 mt-8 text-lg rounded-lg hover:bg-blue-700">
+                    立即体验
+                </button>
+            </div>
+            <div class="mt-12 lg:mt-0 slide-in-right">
+                <img src="https://placehold.co/500x350" alt="智能算法演示" class="rounded-lg shadow-lg">
+            </div>
         </div>
     </section>
 
     <!-- Section 2: 效率提升 -->
-    <section class="min-h-screen container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between bg-gray-50">
-        <div class="max-w-xl text-left slide-in-left">
-            <div class="flex items-center space-x-2 mb-4">
-                <span class="text-2xl">⚡️</span>
-                <h2 class="text-3xl font-bold">30分钟工作量，1分钟搞定</h2>
+    <section class="min-h-screen relative bg-pattern-1">
+        <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
+            <div class="max-w-xl text-left slide-in-left">
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="text-2xl">⚡️</span>
+                    <h2 class="text-3xl font-bold">30分钟工作量，1分钟搞定</h2>
+                </div>
+                <p class="text-gray-600 text-lg">
+                    革命性的效率提升：传统人工处理需要30分钟的录屏文件，现在只需1分钟即可完成。自动化处理流程，让您的工作事半功倍。
+                </p>
             </div>
-            <p class="text-gray-600 text-lg">
-                革命性的效率提升：传统人工处理需要30分钟的录屏文件，现在只需1分钟即可完成。自动化处理流程，让您的工作事半功倍。
-            </p>
-        </div>
-        <div class="mt-8 lg:mt-0 slide-in-right">
-            <img src="https://placehold.co/600x400" alt="效率对比展示" class="rounded-lg shadow-lg">
+            <div class="mt-8 lg:mt-0 slide-in-right">
+                <img src="https://placehold.co/600x400" alt="效率对比展示" class="rounded-lg shadow-lg">
+            </div>
         </div>
     </section>
 
     <!-- Section 3: 专业输出 -->
-    <section class="min-h-screen container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
-        <div class="max-w-xl text-left scale-in">
-            <div class="flex items-center space-x-2 mb-4">
-                <span class="text-2xl">📑</span>
-                <h2 class="text-3xl font-bold">专业证据处理工具</h2>
+    <section class="min-h-screen relative floating-shapes">
+        <div class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between">
+            <div class="max-w-xl text-left scale-in">
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="text-2xl">📑</span>
+                    <h2 class="text-3xl font-bold">专业证据处理工具</h2>
+                </div>
+                <p class="text-gray-600 text-lg">
+                    支持导出为PDF或图片格式，完美适配律师办案需求。提供清晰、连续、完整的聊天记录文档，让证据提取工作更加专业可靠。
+                </p>
             </div>
-            <p class="text-gray-600 text-lg">
-                支持导出为PDF或图片格式，完美适配律师办案需求。提供清晰、连续、完整的聊天记录文档，让证据提取工作更加专业可靠。
-            </p>
-        </div>
-        <div class="mt-8 lg:mt-0 scale-in">
-            <img src="https://placehold.co/600x400" alt="专业导出效果展示" class="rounded-lg shadow-lg">
+            <div class="mt-8 lg:mt-0 scale-in">
+                <img src="https://placehold.co/600x400" alt="专业导出效果展示" class="rounded-lg shadow-lg">
+            </div>
         </div>
     </section>
 </body>
