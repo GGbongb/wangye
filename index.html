@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focalboard Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@tailwindcss/aspect-ratio@latest"></script>
+    <script>
+        // JavaScript for scroll animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeIn');
+                    }
+                });
+            });
+
+            const fadeElements = document.querySelectorAll('.fade');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-[#1B2A49] font-sans">
+    <!-- Navbar -->
+    <header class="bg-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+                <span class="font-bold text-xl">Focalboard</span>
+            </div>
+            <nav class="flex space-x-8">
+                <a href="#" class="hover:underline">Contribute</a>
+                <a href="#" class="hover:underline">GitHub</a>
+                <a href="#" class="hover:underline">Help Docs</a>
+                <a href="#" class="hover:underline">Feedback</a>
+                <a href="#" class="hover:underline">Download</a>
+            </nav>
+            <button class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Get started</button>
+        </div>
+    </header>
+
+    <!-- Section 1 -->
+    <section class="container mx-auto px-4 py-16 text-center lg:flex lg:items-center lg:justify-between fade">
+        <div class="text-left max-w-xl">
+            <h1 class="text-4xl lg:text-5xl font-bold leading-tight">
+                Open source<br />
+                project management<br />
+                for <span class="text-yellow-500">technical teams</span>
+            </h1>
+            <p class="mt-6 text-lg text-gray-600">
+                Keep everything and everyone on track.
+            </p>
+            <button class="bg-blue-600 text-white py-3 px-6 mt-8 text-lg rounded-lg hover:bg-blue-700">
+                Get started
+            </button>
+            <div class="mt-4 text-yellow-500 text-sm">
+                <i class="fas fa-star"></i> Over 13k stars on GitHub and counting!
+            </div>
+        </div>
+        <div class="mt-12 lg:mt-0">
+            <img src="https://placehold.co/500x350" alt="Project management dashboard" class="rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between bg-gray-50 fade">
+        <div class="max-w-xl text-left">
+            <div class="flex items-center space-x-2 mb-4">
+                <span class="text-2xl">🚀</span>
+                <h2 class="text-3xl font-bold">Accelerate productivity</h2>
+            </div>
+            <p class="text-gray-600 text-lg">
+                Centralize, plan, and track all your work in one place. Focalboard helps your organization maintain a single source of truth, so your teams stay aligned to complete tasks, reach milestones, and achieve their goals.
+            </p>
+        </div>
+        <div class="mt-8 lg:mt-0">
+            <img src="https://placehold.co/600x400" alt="Accelerate productivity dashboard" class="rounded-lg shadow-lg">
+        </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="container mx-auto px-4 py-16 lg:flex lg:items-center lg:justify-between fade">
+        <div class="max-w-xl text-left">
+            <div class="flex items-center space-x-2 mb-4">
+                <span class="text-2xl">🤝</span>
+                <h2 class="text-3xl font-bold">Align your teams with real-time collaboration</h2>
+            </div>
+            <p class="text-gray-600 text-lg">
+                Keep everyone in sync with card comments, @mention teammates to get their attention, and set board permissions to share your board with the entire team or specific individuals.
+            </p>
+        </div>
+        <div class="mt-8 lg:mt-0">
+            <img src="https://placehold.co/600x400" alt="Real-time collaboration feature interface" class="rounded-lg shadow-lg">
+        </div>
+    </section>
+</body>
+
+</html>
